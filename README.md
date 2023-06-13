@@ -1,16 +1,10 @@
-# sketchpad - physically-based renderer
+# SketchLib - physically-based renderer
 
 This is a simple rendering library built with OpenGL 4.6 and C++17, the purpose of which is to experiment with a wide range of rendering techniques and see how these ideas are put into practice in a rasterization pipeline. Unlike offline path tracing which is based mostly on math and physics rules, RTR is full of little hacks and compromises due to the 60 FPS constraint. There are also lots of low-level details behind the graphics API, so we need a solid understanding of every step in the rendering pipeline.
 
 This project is initially started as an exercise to learn the basics of graphics in modern OpenGL, which has since then incorporated some ideas from game engine architecture to raise up the scope and level of abstraction. It is designed with modularization in mind to let users prototype new scenes with relative ease, thus we can focus more on the rendering algorithms without worrying too much about details. This can also be a useful framework and codebase for future reference, and a good starting point for implementing something more feature-complete and advanced.
 
 This is no longer maintained but only serves as a basic source of reference. I'm migrating to Vulkan for the next one and will focus more on the engineering side.
-
-![Build status](https://github.com/neo-mashiro/sketchpad/actions/workflows/msbuild.yml/badge.svg)
-![GitHub license](https://img.shields.io/github/license/neo-mashiro/sketchpad?color=blueviolet&label=License&style=flat)
-![Total views](https://img.shields.io/youtube/views/JCagITtAmQ0?label=Views&style=social)
-
-Watch [Demo Video](https://www.youtube.com/watch?v=JCagITtAmQ0) on Youtube. (Tested on a 2016 old laptop with __NVIDIA GTX 1050__ card)
 
 ## Requirements
 
@@ -35,26 +29,26 @@ cd vcpkg
 
 The `premake5.lua` script will handle all the workspace/project/build settings for us, there's no need to configure `build/release` or `win32/x64` manually, just run `premake.bat` and you are good to go. Alternatively, you can also build the solution on the command line like so:
 ```bash
-git clone https://github.com/neo-mashiro/sketchpad.git
-cd sketchpad/
+git clone https://github.com/neo-mashiro/sketchlib-opengl.git
+cd sketchlib-opengl/
 vendor/premake/premake5.exe vs2019
 ```
 The `\vendor` folder already contains the pre-compiled binaries of all dependencies listed above, simply open the solution in Visual Studio and start building. Upon success, executables will be built into a sub-folder in `\bin` for the selected platform, and all dependent DLLs will be automatically copied over there. You can also move the exe folder around without problems, as long as it's inside root, paths are automatically deducted.
 
-To be able to run the scenes, make sure you have downloaded the assets separately, see [this page](https://github.com/neo-mashiro/sketchpad/tree/main/res) for details.
+To be able to run the scenes, make sure you have downloaded the assets separately, see [this page](https://github.com/jankozik/sketchlib-opengl/tree/main/res) for details.
 
 ## Screenshots
 
-<p align="center"><img src="https://raw.githubusercontent.com/neo-mashiro/sketchpad/main/res/screenshot/11.png"></p>
-<p align="center"><img src="https://raw.githubusercontent.com/neo-mashiro/sketchpad/main/res/screenshot/22.png"></p>
-<p align="center"><img src="https://raw.githubusercontent.com/neo-mashiro/sketchpad/main/res/screenshot/33.png"></p>
-<p align="center"><img src="https://raw.githubusercontent.com/neo-mashiro/sketchpad/main/res/screenshot/44.png"></p>
-<p align="center"><img src="https://raw.githubusercontent.com/neo-mashiro/sketchpad/main/res/screenshot/55.png"></p>
-<p align="center"><img src="https://raw.githubusercontent.com/neo-mashiro/sketchpad/main/res/screenshot/66.png"></p>
-<p align="center"><img src="https://raw.githubusercontent.com/neo-mashiro/sketchpad/main/res/screenshot/77.png"></p>
-<p align="center"><img src="https://raw.githubusercontent.com/neo-mashiro/sketchpad/main/res/screenshot/88.png"></p>
-<p align="center"><img src="https://raw.githubusercontent.com/neo-mashiro/sketchpad/main/res/screenshot/99.png"></p>
-<p align="center"><img src="https://raw.githubusercontent.com/neo-mashiro/sketchpad/main/res/screenshot/00.png"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/jankozik/sketchlib-opengl/main/res/screenshot/11.png"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/jankozik/sketchlib-opengl/main/res/screenshot/22.png"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/jankozik/sketchlib-opengl/main/res/screenshot/33.png"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/jankozik/sketchlib-opengl/main/res/screenshot/44.png"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/jankozik/sketchlib-opengl/main/res/screenshot/55.png"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/jankozik/sketchlib-opengl/main/res/screenshot/66.png"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/jankozik/sketchlib-opengl/main/res/screenshot/77.png"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/jankozik/sketchlib-opengl/main/res/screenshot/88.png"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/jankozik/sketchlib-opengl/main/res/screenshot/99.png"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/jankozik/sketchlib-opengl/main/res/screenshot/00.png"></p>
 
 ![image](/res/screenshot/console.png?raw=true "debug console")
 
